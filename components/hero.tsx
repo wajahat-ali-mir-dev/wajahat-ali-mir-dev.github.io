@@ -6,12 +6,12 @@ import Link from 'next/link';
 const socialLinks = [
   {
     name: 'GitHub',
-    href: 'https://github.com/WajahatAliMirPro',
+    href: 'https://github.com/wajahat-ali-mir-dev',
     icon: Github,
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/mirtech',
+    href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev',
     icon: Linkedin,
   },
   {
