@@ -47,12 +47,12 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-          Software Engineer | React Native Developer | Mobile App Engineer
+          Software Engineer & Mobile App Specialist
         </p>
 
         {/* Description */}
         <p className="text-base sm:text-lg text-foreground/80 mb-10 leading-relaxed max-w-2xl mx-auto">
-          I build reliable, scalable mobile applications with clean design and smooth user experiences for iOS and Android. Focused on delivering apps that are practical, maintainable, and ready for production.
+          Building high-performance web and mobile solutions with React, React Native, and modern JavaScript. I design and deploy products that are stable, scalable, and built for performance across platforms.
         </p>
 
         {/* CTA Buttons */}

@@ -15,24 +15,20 @@ export function About() {
             </div>
 
             <h3 className="text-4xl font-bold text-foreground mb-6 leading-tight">
-              Crafting Reliable Mobile Experiences
+              Full-Stack Engineer & Mobile Specialist
             </h3>
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                I'm a Software Engineer with deep expertise in mobile application development, particularly with React Native. With years of experience building production-ready applications, I specialize in creating apps that are not just functional, but delightful to use.
+                I'm Wajahat Ali Mir, a software engineer specializing in full-stack web and mobile application development. I design and deploy products that are stable, scalable, and built for performance across platforms. With hands-on experience developing React Native mobile applications and React/Next.js web applications, I focus on creating seamless user experiences that feel native and intuitive.
               </p>
 
               <p>
-                My passion lies in writing clean, maintainable code and focusing on performance, stability, and user experience. I believe in practical solutions over unnecessary complexity, always following modern React Native best practices and industry standards.
+                My passion lies in writing clean, maintainable code with emphasis on performance, stability, and user experience. Beyond code, I focus on clean architecture, performance tuning, and efficient data flows that stand up under real-world use. Every project is aligned with solid engineering principles and production readiness.
               </p>
 
               <p>
-                I've had the privilege to collaborate with cross-functional teams, solving complex problems and continuously learning new technologies. Whether it's building offline-capable features, integrating APIs, or optimizing performance, I approach each project with dedication and attention to detail.
-              </p>
-
-              <p>
-                Beyond coding, I enjoy photography, traveling, and exploring different cultures. These interests help me bring a unique perspective to design and user experience in my projects.
+                I've had the privilege to collaborate with cross-functional teams, solving complex problems through practical problem-solving. Whether I'm crafting a new feature, optimizing performance, integrating APIs, or building offline-capable features, I approach each challenge with dedication and attention to detail.
               </p>
             </div>
 
@@ -69,10 +65,10 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    Clean Code
+                    React & React Native
                   </h4>
                   <p className="text-sm text-foreground/70">
-                    Writing readable, maintainable code that other developers love to work with.
+                    Expert in building cross-platform mobile apps and modern web applications with clean, scalable architecture.
                   </p>
                 </div>
               </div>
@@ -91,10 +87,10 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    Performance Focus
+                    Performance & SEO
                   </h4>
                   <p className="text-sm text-foreground/70">
-                    Optimizing every millisecond for a smooth, responsive user experience.
+                    Optimizing for speed, SEO, and user experience with modern web frameworks and best practices.
                   </p>
                 </div>
               </div>
@@ -114,10 +110,10 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    Cross-Platform
+                    TypeScript & APIs
                   </h4>
                   <p className="text-sm text-foreground/70">
-                    Building apps that work seamlessly on iOS and Android platforms.
+                    Building type-safe applications with robust API integration and offline-first capabilities.
                   </p>
                 </div>
               </div>

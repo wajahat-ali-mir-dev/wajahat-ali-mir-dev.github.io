@@ -42,8 +42,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Wajahat Ali Mir",
+    "jobTitle": ["Software Engineer", "React Native Developer", "Web Developer"],
+    "url": "https://www.mrwajahatalimir.com",
+    "sameAs": [
+      "https://github.com/WajahatAliMirPro",
+      "https://www.linkedin.com/in/mirtech",
+      "https://x.com/mrwajahatalimir",
+      "https://about.me/wajahatalimir",
+      "https://www.pinterest.com/mrwajahatalimir",
+      "https://linktr.ee/mrwajahatalimir"
+    ],
+    "email": "mailto:mrwajahatalimir@gmail.com",
+    "description": "Full-stack software engineer specializing in React Native mobile development, React and Next.js web applications, and scalable solutions."
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
