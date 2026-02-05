@@ -12,12 +12,12 @@ import {
 const socialLinks = [
   {
     name: 'GitHub',
-    href: 'https://github.com/WajahatAliMirPro',
+    href: 'https://github.com/wajahat-ali-mir-dev',
     icon: Github,
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/mirtech',
+    href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev',
     icon: Linkedin,
   },
   {
@@ -42,14 +42,20 @@ const quickLinks = [
 ];
 
 const externalLinks = [
-  { name: 'GitHub', href: 'https://github.com/WajahatAliMirPro' },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mirtech' },
-  { name: 'Medium', href: 'https://mrwajahatalimir.medium.com' },
+  { name: 'GitHub', href: 'https://github.com/wajahat-ali-mir-dev' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev' },
+  { name: 'Dev.to', href: 'https://dev.to/wajahat_ali_mir_dev' },
   { name: 'Twitter', href: 'https://x.com/mrwajahatalimir' },
-  { name: 'Linktree', href: 'https://linktr.ee/mrwajahatalimir' },
-  { name: 'About.me', href: 'https://about.me/wajahatalimir' },
-  { name: 'Blog', href: 'https://mrwajahatalimir.blogspot.com' },
+  { name: 'Linktree', href: 'https://linktr.ee/wajahat_ali_mir_dev' },
+  { name: 'About.me', href: 'https://about.me/wajahat-ali-mir-dev' },
+  { name: 'Blog', href: 'https://wajahat-ali-mir-dev.blogspot.com' },
+  { name: 'Substack', href: 'https://mrwajahatalimir.substack.com' },
   { name: 'Pinterest', href: 'https://www.pinterest.com/mrwajahatalimir' },
+  { name: 'SoundCloud', href: 'https://soundcloud.com/wajahat-ali-mir-dev' },
+  { name: 'Sketchfab', href: 'https://sketchfab.com/wajahat-ali-mir-dev' },
+  { name: 'Telegram', href: 'http://t.me/mrwajahatalimir' },
+  { name: 'link.me', href: 'https://link.me/mrwajahatalimir' },
+  { name: 'WhatsApp', href: 'https://api.whatsapp.com/send/?phone=%2B923700882006&text=Hello%20Wajahat!%20I%20hope%20you%20are%20doing%20well' },
 ];
 
 export function Footer() {
@@ -59,7 +65,7 @@ export function Footer() {
     <footer className="bg-background border-t border-border">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-5 gap-8 mb-12">
+        <div className="grid md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6 group">
@@ -112,9 +118,9 @@ export function Footer() {
 
           {/* Social Profiles */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Social Links</h3>
+            <h3 className="font-semibold text-foreground mb-4">Development</h3>
             <ul className="space-y-2">
-              {externalLinks.slice(0, 4).map((link) => (
+              {externalLinks.slice(0, 5).map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
@@ -130,11 +136,31 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* More Links */}
+          {/* Content & Writing */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">More Links</h3>
+            <h3 className="font-semibold text-foreground mb-4">Content</h3>
             <ul className="space-y-2">
-              {externalLinks.slice(4).map((link) => (
+              {externalLinks.slice(5, 9).map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <span>{link.name}</span>
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* More Platforms */}
+          <div>
+            <h3 className="font-semibold text-foreground mb-4">Connect</h3>
+            <ul className="space-y-2">
+              {externalLinks.slice(9).map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
@@ -196,7 +222,7 @@ export function Footer() {
               </a>
               <span className="text-foreground/30">•</span>
               <a
-                href="https://github.com/WajahatAliMirPro"
+                href="https://github.com/wajahat-ali-mir-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"

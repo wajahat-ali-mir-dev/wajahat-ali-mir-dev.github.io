@@ -17,13 +17,34 @@ interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    title: 'FitTrack Mobile App',
+    title: 'SaaS Mobile App',
     description:
-      'Cross-platform fitness tracking application with real-time workout monitoring, progress analytics, and social features.',
+      'Production-ready cross-platform app built with React Native, Redux, and REST APIs that supports offline features, secure data sync, and modular UI components. Demonstrates modern mobile architecture and performance optimization.',
     tags: ['React Native', 'Redux', 'Firebase', 'iOS', 'Android'],
     github: 'https://github.com/WajahatAliMirPro/fittrack',
     link: 'https://example.com/fittrack',
     image: '/project-1.jpg',
+    featured: true,
+  },
+  {
+    id: '2',
+    title: 'Next.js Web Dashboard',
+    description:
+      'Responsive dashboard using Next.js and Tailwind CSS with optimized routing, SEO-enabled pages, dynamic data fetching, and user-centric design. Built with performance and accessibility as core principles.',
+    tags: ['Next.js', 'TypeScript', 'API Integration', 'SEO Optimized'],
+    github: 'https://github.com/WajahatAliMirPro/ecommerce',
+    link: 'https://example.com/ecommerce',
+    image: '/project-2.jpg',
+    featured: true,
+  },
+  {
+    id: '3',
+    title: 'Offline-First Note App',
+    description:
+      'Production notes application with offline support, structured state management, automatic sync with cloud backup. Features reusable UI modules and demonstrates best practices in data persistence and real-world reliability.',
+    tags: ['React Native', 'Offline First', 'Realm Database', 'TypeScript'],
+    github: 'https://github.com/WajahatAliMirPro/notes-app',
+    image: '/project-3.jpg',
     featured: true,
   },
   {
@@ -49,28 +70,28 @@ const projects: Project[] = [
   },
   {
     id: '4',
-    title: 'Weather Dashboard',
+    title: 'Weather Mobile App',
     description:
-      'Real-time weather application with location-based forecasts, beautiful UI, and historical weather data.',
-    tags: ['React Native', 'APIs', 'UI/UX Design'],
+      'Real-time weather application with location-based forecasts, intuitive UI, and historical weather data. Built to demonstrate API integration best practices and responsive mobile design.',
+    tags: ['React Native', 'REST APIs', 'UI/UX Design'],
     github: 'https://github.com/WajahatAliMirPro/weather',
     image: '/project-4.jpg',
   },
   {
     id: '5',
-    title: 'Chat Application',
+    title: 'Real-Time Chat Platform',
     description:
-      'Real-time messaging app with user authentication, notifications, media sharing, and message persistence.',
+      'Full-featured messaging app with user authentication, instant notifications, media sharing, and persistent message storage. Showcases Firebase integration and real-time data handling.',
     tags: ['React Native', 'Firebase', 'Real-time Database'],
     github: 'https://github.com/WajahatAliMirPro/chat-app',
     image: '/project-5.jpg',
   },
   {
     id: '6',
-    title: 'Blog Content Management',
+    title: 'API-Driven Blog CMS',
     description:
-      'CMS-driven blog platform with markdown support, search functionality, and optimized content delivery.',
-    tags: ['React Native', 'TypeScript', 'APIs'],
+      'Content management system with markdown support, full-text search, and optimized content delivery. Deployed on Vercel with clean architecture and production-ready code structure.',
+    tags: ['TypeScript', 'Next.js', 'APIs'],
     github: 'https://github.com/WajahatAliMirPro/blog-cms',
     image: '/project-6.jpg',
   },
@@ -103,7 +124,7 @@ export function Projects() {
           </h3>
 
           <p className="text-foreground/70 max-w-2xl mb-8">
-            Explore a selection of projects I've worked on, showcasing my expertise in mobile development, API integration, and user experience design.
+            A curated selection of production-ready projects demonstrating expertise in React Native mobile development, Next.js web applications, API integration, performance optimization, and scalable architecture.
           </p>
 
           {/* Filter Tags */}

@@ -4,33 +4,49 @@ import { ExternalLink } from 'lucide-react';
 
 const allLinks = [
   {
-    category: 'Portfolio',
+    category: 'Portfolio & Main Sites',
     links: [
       { name: 'Main Portfolio', href: 'https://www.mrwajahatalimir.com', description: 'Personal portfolio website' },
-      { name: 'GitHub Portfolio', href: 'https://wajahatalimirpro.github.io', description: 'GitHub hosted portfolio' },
+      { name: 'GitHub Portfolio', href: 'https://wajahat-ali-mir-dev.github.io', description: 'GitHub hosted portfolio' },
     ],
   },
   {
-    category: 'Professional',
+    category: 'Development & Code',
     links: [
-      { name: 'GitHub', href: 'https://github.com/WajahatAliMirPro', description: 'Code repositories and projects' },
-      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mirtech', description: 'Professional profile' },
-      { name: 'About.me', href: 'https://about.me/wajahatalimir', description: 'Professional bio' },
+      { name: 'GitHub', href: 'https://github.com/wajahat-ali-mir-dev', description: 'Code repositories and projects' },
+      { name: 'Dev.to', href: 'https://dev.to/wajahat_ali_mir_dev', description: 'Technical articles and community' },
+      { name: 'Sketchfab', href: 'https://sketchfab.com/wajahat-ali-mir-dev', description: '3D models and creative work' },
+    ],
+  },
+  {
+    category: 'Professional & Social',
+    links: [
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev', description: 'Professional profile' },
+      { name: 'About.me', href: 'https://about.me/wajahat-ali-mir-dev', description: 'Professional bio' },
+      { name: 'link.me', href: 'https://link.me/mrwajahatalimir', description: 'Personal link profile' },
     ],
   },
   {
     category: 'Content & Writing',
     links: [
-      { name: 'Medium Blog', href: 'https://mrwajahatalimir.medium.com', description: 'Technical articles and insights' },
-      { name: 'Blogger', href: 'https://mrwajahatalimir.blogspot.com', description: 'Blog posts and tutorials' },
+      { name: 'Substack', href: 'https://mrwajahatalimir.substack.com', description: 'Newsletter and articles' },
+      { name: 'Blogger', href: 'https://wajahat-ali-mir-dev.blogspot.com', description: 'Blog posts and tutorials' },
       { name: 'Twitter/X', href: 'https://x.com/mrwajahatalimir', description: 'Latest updates and thoughts' },
     ],
   },
   {
-    category: 'Social & Community',
+    category: 'Creative & Multimedia',
     links: [
       { name: 'Pinterest', href: 'https://www.pinterest.com/mrwajahatalimir', description: 'Design inspiration and ideas' },
-      { name: 'Linktree', href: 'https://linktr.ee/mrwajahatalimir', description: 'All links in one place' },
+      { name: 'SoundCloud', href: 'https://soundcloud.com/wajahat-ali-mir-dev', description: 'Audio projects and mixes' },
+    ],
+  },
+  {
+    category: 'Direct Connect',
+    links: [
+      { name: 'Linktree', href: 'https://linktr.ee/wajahat_ali_mir_dev', description: 'All links in one place' },
+      { name: 'Telegram', href: 'http://t.me/mrwajahatalimir', description: 'Chat on Telegram' },
+      { name: 'WhatsApp', href: 'https://api.whatsapp.com/send/?phone=%2B923700882006&text=Hello%20Wajahat!%20I%20hope%20you%20are%20doing%20well', description: 'Message on WhatsApp' },
     ],
   },
 ];
@@ -59,7 +75,7 @@ export function LinksHub() {
         </div>
 
         {/* Links Grid */}
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {allLinks.map((section) => (
             <div key={section.category}>
               <h4 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">

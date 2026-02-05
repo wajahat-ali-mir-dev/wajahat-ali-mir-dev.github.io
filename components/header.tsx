@@ -44,13 +44,16 @@ export function Header() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center group-hover:bg-accent/90 transition-colors">
-            <span className="text-accent-foreground font-bold text-lg">W</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-lg overflow-hidden border-2 border-accent/50 group-hover:border-accent transition-all duration-300 bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center flex-shrink-0">
+            <img src="/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
           </div>
-          <span className="font-bold text-foreground hidden sm:block">
-            Wajahat
-          </span>
+          <div>
+            <span className="font-bold text-foreground hidden sm:block text-sm">
+              Wajahat
+            </span>
+            <span className="text-xs text-accent hidden sm:block">Developer</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
