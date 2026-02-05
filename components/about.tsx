@@ -49,9 +49,28 @@ export function About() {
             </div>
           </div>
 
-          {/* Right side - Features */}
+          {/* Right side - Images and Features */}
           <div className="space-y-6">
-            <div className="p-6 rounded-lg bg-secondary/30 border border-border hover:border-accent/50 transition-colors">
+            {/* Image Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="rounded-lg overflow-hidden border border-accent/30 hover:border-accent transition-all h-48">
+                <img 
+                  src="/portrait-2.jpg" 
+                  alt="Working on code" 
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden border border-accent/30 hover:border-accent transition-all h-48">
+                <img 
+                  src="/portrait-3.jpg" 
+                  alt="Presenting projects" 
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="p-6 rounded-lg bg-gradient-to-br from-secondary/40 to-secondary/20 border border-accent/30 hover:border-accent/80 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                   <svg
@@ -74,7 +93,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="p-6 rounded-lg bg-secondary/30 border border-border hover:border-accent/50 transition-colors">
+            <div className="p-6 rounded-lg bg-gradient-to-br from-secondary/40 to-secondary/20 border border-accent/30 hover:border-accent/80 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                   <svg
@@ -96,7 +115,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="p-6 rounded-lg bg-secondary/30 border border-border hover:border-accent/50 transition-colors">
+            <div className="p-6 rounded-lg bg-gradient-to-br from-secondary/40 to-secondary/20 border border-accent/30 hover:border-accent/80 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                   <svg
