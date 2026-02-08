@@ -35,12 +35,12 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { name: 'Portfolio', href: 'https://www.mrwajahatalimir.com' },
-  { name: 'About Me', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Links', href: '#links' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Portfolio', href: 'https://wajahat-ali-mir-dev.github.io' },
+  { name: 'About Me', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Links', href: '/links' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const externalLinks = [

@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navigation = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Links', href: '#links' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '/about' },
+  { name: 'Skills', href: '/skills' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Links', href: '/links' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export function Header() {
@@ -25,14 +25,6 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleNavClick = (href: string) => {
-    setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <header
@@ -59,23 +51,23 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navigation.map((item) => (
-            <button
+            <Link
               key={item.name}
-              onClick={() => handleNavClick(item.href)}
+              href={item.href}
               className="text-foreground hover:text-accent transition-colors text-sm font-medium"
             >
               {item.name}
-            </button>
+            </Link>
           ))}
         </div>
 
         {/* CTA Button */}
-        <button
-          onClick={() => handleNavClick('#contact')}
+        <Link
+          href="/contact"
           className="hidden md:block px-6 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-medium text-sm"
         >
           Get in Touch
-        </button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -96,23 +88,26 @@ export function Header() {
         <div className="md:hidden bg-background border-b border-border">
           <div className="max-w-6xl mx-auto px-4 py-4 space-y-2">
             {navigation.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                onClick={() => handleNavClick(item.href)}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
                 className="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary/10 rounded-lg transition-colors text-sm font-medium"
               >
                 {item.name}
-              </button>
+              </Link>
             ))}
-            <button
-              onClick={() => handleNavClick('#contact')}
-              className="w-full mt-4 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-medium text-sm"
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block w-full mt-4 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-medium text-sm text-center"
             >
               Get in Touch
-            </button>
+            </Link>
           </div>
         </div>
       )}
     </header>
   );
 }
+
