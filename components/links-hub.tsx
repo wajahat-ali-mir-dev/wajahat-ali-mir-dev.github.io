@@ -89,7 +89,7 @@ export function LinksHub() {
                     key={link.name}
                     href={link.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="follow"
                     className="group block p-4 rounded-lg border border-border bg-background/50 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
                   >
                     <div className="flex items-start justify-between gap-3">

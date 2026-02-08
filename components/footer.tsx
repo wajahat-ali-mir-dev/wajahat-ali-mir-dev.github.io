@@ -88,7 +88,7 @@ export function Footer() {
                     key={social.name}
                     href={social.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="follow"
                     aria-label={social.name}
                     className="p-2 rounded-lg bg-secondary/50 hover:bg-accent/20 text-foreground hover:text-accent transition-all duration-300"
                   >
@@ -125,7 +125,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="follow"
                     className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span>{link.name}</span>
@@ -145,7 +145,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="follow"
                     className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span>{link.name}</span>
@@ -165,7 +165,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="follow"
                     className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span>{link.name}</span>
@@ -206,7 +206,7 @@ export function Footer() {
               <a
                 href="https://www.mrwajahatalimir.com"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="follow"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 Website
@@ -215,7 +215,7 @@ export function Footer() {
               <a
                 href="https://x.com/mrwajahatalimir"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="follow"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 Twitter
@@ -224,7 +224,7 @@ export function Footer() {
               <a
                 href="https://github.com/wajahat-ali-mir-dev"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="follow"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 GitHub

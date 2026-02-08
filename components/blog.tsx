@@ -140,7 +140,7 @@ export function Blog() {
                 <a
                   href={blogPosts[0].link}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="follow"
                   className="flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors text-sm font-semibold group"
                 >
                   <span>Read Article</span>
@@ -162,7 +162,7 @@ export function Blog() {
               key={post.id}
               href={post.link}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="follow"
               className="group p-6 rounded-lg border border-border hover:border-accent/50 bg-background/50 backdrop-blur-sm hover:bg-secondary/20 transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-4">
@@ -204,7 +204,7 @@ export function Blog() {
             <a
               href="https://mrwajahatalimir.medium.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="follow"
               className="p-4 rounded-lg border border-border hover:border-accent/50 bg-background/50 hover:bg-secondary/20 transition-all group text-center"
             >
               <h5 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
@@ -218,7 +218,7 @@ export function Blog() {
             <a
               href="https://mrwajahatalimir.blogspot.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="follow"
               className="p-4 rounded-lg border border-border hover:border-accent/50 bg-background/50 hover:bg-secondary/20 transition-all group text-center"
             >
               <h5 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
@@ -232,7 +232,7 @@ export function Blog() {
             <a
               href="https://mrwajahatalimir.medium.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="follow"
               className="p-4 rounded-lg border border-border hover:border-accent/50 bg-background/50 hover:bg-secondary/20 transition-all group text-center"
             >
               <h5 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">

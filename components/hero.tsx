@@ -42,12 +42,7 @@ export function Hero() {
           {/* Left side - Text */}
           <div className="text-left md:text-left">
             {/* Badge */}
-            <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/30 border border-accent/40 backdrop-blur-sm hover:border-accent/70 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium text-foreground">
-                Available for new projects
-              </span>
-            </div>
+           
 
             {/* Main Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
@@ -90,7 +85,7 @@ export function Hero() {
                 key={social.name}
                 href={social.href}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="follow"
                 aria-label={social.name}
                 className="p-3 rounded-lg bg-secondary/50 hover:bg-accent/20 text-foreground hover:text-accent transition-all duration-300 group"
               >
@@ -110,8 +105,8 @@ export function Hero() {
               {/* Image container */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-accent/50 hover:border-accent transition-all duration-300 shadow-2xl hover:shadow-accent/20">
                 <img 
-                  src="/portrait-1.jpg" 
-                  alt="Wajahat Ali Mir" 
+                  src="wajahat-ali-mir-dev-coding-image.gif" 
+                  alt="Wajahat Ali Mir coding image " 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />

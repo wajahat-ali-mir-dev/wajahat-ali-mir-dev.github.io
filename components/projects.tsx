@@ -48,7 +48,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: '2',
+    id: '4',
     title: 'E-Commerce Platform',
     description:
       'Full-featured mobile e-commerce solution with product catalog, cart management, checkout flow, and payment integration.',
@@ -59,7 +59,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: '3',
+    id: '5',
     title: 'Offline-First Note App',
     description:
       'Notes application with offline capabilities, automatic sync, rich text editing, and cloud backup functionality.',
@@ -69,7 +69,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: '4',
+    id: '6',
     title: 'Weather Mobile App',
     description:
       'Real-time weather application with location-based forecasts, intuitive UI, and historical weather data. Built to demonstrate API integration best practices and responsive mobile design.',
@@ -78,7 +78,7 @@ const projects: Project[] = [
     image: '/project-4.jpg',
   },
   {
-    id: '5',
+    id: '7',
     title: 'Real-Time Chat Platform',
     description:
       'Full-featured messaging app with user authentication, instant notifications, media sharing, and persistent message storage. Showcases Firebase integration and real-time data handling.',
@@ -87,7 +87,7 @@ const projects: Project[] = [
     image: '/project-5.jpg',
   },
   {
-    id: '6',
+    id: '8',
     title: 'API-Driven Blog CMS',
     description:
       'Content management system with markdown support, full-text search, and optimized content delivery. Deployed on Vercel with clean architecture and production-ready code structure.',
@@ -168,15 +168,18 @@ export function Projects() {
             >
               {/* Image Container */}
               <div className="relative h-48 bg-gradient-to-br from-accent/20 to-secondary/20 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-accent/20 mb-2">
-                      {project.title.split(' ')[0]}
-                    </div>
-                    <p className="text-accent/10 text-sm">
-                      {project.featured ? 'Featured Project' : 'Project'}
-                    </p>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 z-10" />
+                
+                {/* Project Image */}
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+
+                <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-center bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full border border-accent/20">
+                     <span className="text-accent font-medium text-sm">View Details</span>
                   </div>
                 </div>
               </div>
@@ -208,7 +211,7 @@ export function Projects() {
                   <a
                     href={project.github}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="follow"
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-secondary/30 hover:bg-accent/20 text-foreground hover:text-accent rounded-lg transition-colors text-sm font-medium group/link"
                   >
                     <Github className="w-4 h-4" />
@@ -219,7 +222,7 @@ export function Projects() {
                     <a
                       href={project.link}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="follow"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 rounded-lg transition-colors text-sm font-medium group/link"
                     >
                       <span>Live Demo</span>
@@ -238,9 +241,9 @@ export function Projects() {
             Interested in seeing more of my work?
           </p>
           <a
-            href="https://github.com/WajahatAliMirPro"
+            href="https://github.com/wajahat-ali-mir-dev"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="follow"
             className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold"
           >
             <span>Visit GitHub</span>

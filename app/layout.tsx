@@ -4,14 +4,20 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: 'Wajahat Ali Mir | Software Engineer & React Native Developer',
   description: 'Professional portfolio of Wajahat Ali Mir. Software engineer specializing in React Native, mobile app development, and scalable solutions.',
   keywords: 'React Native, Mobile Development, Software Engineer, JavaScript, TypeScript',
-  generator: 'v0.app',
+
   openGraph: {
     title: 'Wajahat Ali Mir | Software Engineer',
     description: 'Building reliable, scalable mobile applications with clean design and smooth user experiences.',
@@ -28,12 +34,9 @@ export const metadata: Metadata = {
         url: '/icon-dark-32x32.png',
         media: '(prefers-color-scheme: dark)',
       },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+
     ],
-    apple: '/apple-icon.png',
+    apple: '/wajahat-ali-mir-apple-logo.png',
   },
 }
 
@@ -77,7 +80,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

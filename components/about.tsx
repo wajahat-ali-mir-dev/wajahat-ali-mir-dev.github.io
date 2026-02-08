@@ -55,15 +55,15 @@ export function About() {
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="rounded-lg overflow-hidden border border-accent/30 hover:border-accent transition-all h-48">
                 <img 
-                  src="/portrait-2.jpg" 
-                  alt="Working on code" 
+                  src="/wajahat-ali-mir-in-garden.png" 
+                  alt="Wajahat Ali Mir is in garden " 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="rounded-lg overflow-hidden border border-accent/30 hover:border-accent transition-all h-48">
                 <img 
-                  src="/portrait-3.jpg" 
-                  alt="Presenting projects" 
+                  src="/wajahat-ali-mir-in-deosai-national-park.jpg" 
+                  alt="wajahat ali mir in deosai national park " 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
