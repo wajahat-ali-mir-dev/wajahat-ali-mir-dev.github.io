@@ -8,6 +8,8 @@ import {
   Mail,
   ExternalLink,
 } from 'lucide-react';
+import { TypewriterEffect } from './ui/typewriter-effect';
+import { ScrollAnimation } from './ui/scroll-animation';
 
 const socialLinks = [
   {
@@ -65,6 +67,7 @@ export function Footer() {
     <footer className="bg-background border-t border-border">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <ScrollAnimation direction="up">
         <div className="grid md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-1">
@@ -72,7 +75,9 @@ export function Footer() {
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center group-hover:bg-accent/90 transition-colors">
                 <span className="text-accent-foreground font-bold text-lg">W</span>
               </div>
-              <span className="font-bold text-foreground">Wajahat</span>
+              <span className="font-bold text-foreground">
+                 <TypewriterEffect text="Wajahat" delay={0.2} />
+              </span>
             </Link>
 
             <p className="text-foreground/70 text-sm leading-relaxed">
@@ -89,7 +94,8 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="follow"
-                    aria-label={social.name}
+                    aria-label={`Wajahat Ali Mir on ${social.name}`}
+                    title={`Wajahat Ali Mir on ${social.name}`}
                     className="p-2 rounded-lg bg-secondary/50 hover:bg-accent/20 text-foreground hover:text-accent transition-all duration-300"
                   >
                     <Icon className="w-4 h-4" />
@@ -107,6 +113,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
+                    title={link.name === 'Portfolio' ? 'Wajahat Ali Mir Portfolio' : link.name}
                     className="text-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
@@ -126,6 +133,8 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="follow"
+                    title={`Wajahat Ali Mir on ${link.name}`}
+                    aria-label={`Wajahat Ali Mir on ${link.name}`}
                     className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span>{link.name}</span>
@@ -146,6 +155,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="follow"
+                    title={`Wajahat Ali Mir on ${link.name}`}
                     className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span>{link.name}</span>
@@ -166,6 +176,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="follow"
+                    title={`Wajahat Ali Mir on ${link.name}`}
                     className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span>{link.name}</span>
@@ -186,6 +197,7 @@ export function Footer() {
 
               <a
                 href="mailto:mrwajahatalimir@gmail.com"
+                title="Email Wajahat Ali Mir"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors text-sm font-semibold"
               >
                 <Mail className="w-4 h-4" />
@@ -194,6 +206,7 @@ export function Footer() {
             </div>
           </div>
         </div>
+        </ScrollAnimation>
 
         {/* Bottom Section */}
         <div className="pt-8 border-t border-border">
@@ -207,6 +220,7 @@ export function Footer() {
                 href="https://www.mrwajahatalimir.com"
                 target="_blank"
                 rel="follow"
+                title="Wajahat Ali Mir Portfolio Website"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 Website
@@ -216,6 +230,7 @@ export function Footer() {
                 href="https://x.com/mrwajahatalimir"
                 target="_blank"
                 rel="follow"
+                title="Wajahat Ali Mir on Twitter"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 Twitter
@@ -225,6 +240,7 @@ export function Footer() {
                 href="https://github.com/wajahat-ali-mir-dev"
                 target="_blank"
                 rel="follow"
+                title="Wajahat Ali Mir on GitHub"
                 className="text-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 GitHub

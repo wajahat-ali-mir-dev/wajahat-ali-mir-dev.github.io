@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { TypewriterEffect } from './ui/typewriter-effect';
+import { ScrollAnimation } from './ui/scroll-animation';
 
 interface Project {
   id: string;
@@ -111,16 +113,17 @@ export function Projects() {
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
+        <ScrollAnimation direction="left">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-1 h-8 bg-accent rounded-full" />
             <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
-              My Work
+               <TypewriterEffect text="My Work" />
             </h2>
           </div>
 
           <h3 className="text-4xl font-bold text-foreground mb-6 leading-tight">
-            Featured Projects
+             <TypewriterEffect text="Featured Projects" delay={0.5} />
           </h3>
 
           <p className="text-foreground/70 max-w-2xl mb-8">
@@ -156,12 +159,13 @@ export function Projects() {
             ))}
           </div>
         </div>
+        </ScrollAnimation>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
+            <ScrollAnimation key={project.id} direction="up" delay={index * 0.1}>
             <div
-              key={project.id}
               className={`group rounded-lg overflow-hidden border border-border hover:border-accent/50 transition-all duration-300 ${
                 project.featured ? 'md:col-span-1' : ''
               }`}
@@ -173,7 +177,9 @@ export function Projects() {
                 {/* Project Image */}
                 <img 
                   src={project.image} 
-                  alt={project.title} 
+                  alt={project.title}
+                  title={`Wajahat Ali Mir Project - ${project.title}`}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
@@ -212,6 +218,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="follow"
+                    title={`Code for ${project.title} by Wajahat Ali Mir`}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-secondary/30 hover:bg-accent/20 text-foreground hover:text-accent rounded-lg transition-colors text-sm font-medium group/link"
                   >
                     <Github className="w-4 h-4" />
@@ -223,6 +230,7 @@ export function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="follow"
+                      title={`Live Demo of ${project.title} by Wajahat Ali Mir`}
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 rounded-lg transition-colors text-sm font-medium group/link"
                     >
                       <span>Live Demo</span>
@@ -232,10 +240,12 @@ export function Projects() {
                 </div>
               </div>
             </div>
+            </ScrollAnimation>
           ))}
         </div>
 
         {/* CTA */}
+        <ScrollAnimation direction="up" delay={0.2}>
         <div className="mt-16 text-center">
           <p className="text-foreground/70 mb-6">
             Interested in seeing more of my work?
@@ -244,12 +254,14 @@ export function Projects() {
             href="https://github.com/wajahat-ali-mir-dev"
             target="_blank"
             rel="follow"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold"
+            title="Visit Wajahat Ali Mir's GitHub Profile"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold shadow-lg hover:shadow-accent/30"
           >
             <span>Visit GitHub</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

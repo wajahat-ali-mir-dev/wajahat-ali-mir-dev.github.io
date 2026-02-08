@@ -1,21 +1,25 @@
 'use client';
 
+import { TypewriterEffect } from './ui/typewriter-effect';
+import { ScrollAnimation } from './ui/scroll-animation';
+
 export function About() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
+        <ScrollAnimation direction="left">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-8 bg-accent rounded-full" />
               <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
-                About Me
+                <TypewriterEffect text="About Me" />
               </h2>
             </div>
 
             <h3 className="text-4xl font-bold text-foreground mb-6 leading-tight">
-              Full-Stack Engineer & Mobile Specialist
+              <TypewriterEffect text="Full-Stack Engineer & Mobile Specialist" delay={0.5} />
             </h3>
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
@@ -56,14 +60,18 @@ export function About() {
               <div className="rounded-lg overflow-hidden border border-accent/30 hover:border-accent transition-all h-48">
                 <img 
                   src="/wajahat-ali-mir-in-garden.png" 
-                  alt="Wajahat Ali Mir is in garden " 
+                  alt="Wajahat Ali Mir is in garden "
+                  title="Wajahat Ali Mir in Garden - Software Engineer"
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="rounded-lg overflow-hidden border border-accent/30 hover:border-accent transition-all h-48">
                 <img 
                   src="/wajahat-ali-mir-in-deosai-national-park.jpg" 
-                  alt="wajahat ali mir in deosai national park " 
+                  alt="wajahat ali mir in deosai national park "
+                  title="Wajahat Ali Mir in Deosai National Park - Traveler & Developer"
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -84,7 +92,7 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    React & React Native
+                    <TypewriterEffect text="React & React Native" delay={1} speed={0.03} />
                   </h4>
                   <p className="text-sm text-foreground/70">
                     Expert in building cross-platform mobile apps and modern web applications with clean, scalable architecture.
@@ -106,7 +114,7 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    Performance & SEO
+                     <TypewriterEffect text="Performance & SEO" delay={1.5} speed={0.03} />
                   </h4>
                   <p className="text-sm text-foreground/70">
                     Optimizing for speed, SEO, and user experience with modern web frameworks and best practices.
@@ -129,7 +137,7 @@ export function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    TypeScript & APIs
+                     <TypewriterEffect text="TypeScript & APIs" delay={2} speed={0.03} />
                   </h4>
                   <p className="text-sm text-foreground/70">
                     Building type-safe applications with robust API integration and offline-first capabilities.
@@ -139,6 +147,7 @@ export function About() {
             </div>
           </div>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

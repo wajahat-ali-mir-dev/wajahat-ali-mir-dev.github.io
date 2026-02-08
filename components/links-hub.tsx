@@ -1,6 +1,7 @@
 'use client';
 
 import { ExternalLink } from 'lucide-react';
+import { ScrollAnimation } from './ui/scroll-animation';
 
 const allLinks = [
   {
@@ -24,6 +25,7 @@ const allLinks = [
       { name: 'LinkedIn', href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev', description: 'Professional profile' },
       { name: 'About.me', href: 'https://about.me/wajahat-ali-mir-dev', description: 'Professional bio' },
       { name: 'link.me', href: 'https://link.me/mrwajahatalimir', description: 'Personal link profile' },
+       { name: 'Crunchbase', href: 'https://www.crunchbase.com/organization/wajahat-ali-mir-solutions', description: 'Company profile' },
     ],
   },
   {
@@ -56,6 +58,7 @@ export function LinksHub() {
     <section id="links" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
+        <ScrollAnimation direction="up">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-1 h-8 bg-accent rounded-full" />
@@ -73,11 +76,13 @@ export function LinksHub() {
             Connect with me across all platforms. Find my portfolio, projects, articles, and social profiles.
           </p>
         </div>
+        </ScrollAnimation>
 
         {/* Links Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {allLinks.map((section) => (
-            <div key={section.category}>
+          {allLinks.map((section, sectionIndex) => (
+            <ScrollAnimation key={section.category} direction="left" delay={sectionIndex * 0.1}>
+            <div>
               <h4 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-accent rounded-full" />
                 {section.category}
@@ -90,7 +95,9 @@ export function LinksHub() {
                     href={link.href}
                     target="_blank"
                     rel="follow"
-                    className="group block p-4 rounded-lg border border-border bg-background/50 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+                    title={`Wajahat Ali Mir on ${link.name}`}
+                    aria-label={`Wajahat Ali Mir on ${link.name}`}
+                    className="group block p-4 rounded-lg border border-border bg-background/50 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 shadow-sm"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1">
@@ -107,10 +114,12 @@ export function LinksHub() {
                 ))}
               </div>
             </div>
+            </ScrollAnimation>
           ))}
         </div>
 
         {/* Contact CTA */}
+        <ScrollAnimation direction="up" delay={0.4}>
         <div className="mt-16 p-8 rounded-lg border border-border bg-background/50 backdrop-blur-sm text-center">
           <h4 className="text-xl font-semibold text-foreground mb-3">
             Can't find what you're looking for?
@@ -120,12 +129,14 @@ export function LinksHub() {
           </p>
           <a
             href="mailto:mrwajahatalimir@gmail.com"
-            className="inline-block px-6 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold"
+            className="inline-block px-6 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold shadow-lg hover:shadow-accent/30"
           >
             Send me an Email
           </a>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
 }
+

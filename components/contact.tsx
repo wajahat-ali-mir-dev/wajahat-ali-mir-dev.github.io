@@ -1,9 +1,10 @@
 'use client';
 
 import React from "react"
-
 import { useState } from 'react';
 import { Mail, Loader2, Check, AlertCircle } from 'lucide-react';
+import { TypewriterEffect } from './ui/typewriter-effect';
+import { ScrollAnimation } from './ui/scroll-animation';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -67,17 +68,18 @@ export function Contact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
+        <ScrollAnimation direction="left">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-1 h-8 bg-accent rounded-full" />
             <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
-              Contact
+               <TypewriterEffect text="Contact" />
             </h2>
             <div className="w-1 h-8 bg-accent rounded-full" />
           </div>
 
           <h3 className="text-4xl font-bold text-foreground mb-4 leading-tight">
-            Let's Work Together
+             <TypewriterEffect text="Let's Work Together" delay={0.5} />
           </h3>
 
           <p className="text-foreground/70 leading-relaxed">
@@ -86,10 +88,12 @@ export function Contact() {
             social channels.
           </p>
         </div>
+        </ScrollAnimation>
 
         {/* Contact Info Cards */}
         <div className="grid sm:grid-cols-2 gap-6 mb-12">
-          <div className="p-6 rounded-lg border border-border bg-background/50 backdrop-blur-sm hover:border-accent/50 transition-colors">
+            <ScrollAnimation direction="up" delay={0.1}>
+          <div className="p-6 rounded-lg border border-border bg-background/50 backdrop-blur-sm hover:border-accent/50 transition-colors h-full">
             <Mail className="w-6 h-6 text-accent mb-3" />
             <h4 className="font-semibold text-foreground mb-2">Email</h4>
             <a
@@ -99,8 +103,10 @@ export function Contact() {
               mrwajahatalimir@gmail.com
             </a>
           </div>
+          </ScrollAnimation>
 
-          <div className="p-6 rounded-lg border border-border bg-background/50 backdrop-blur-sm hover:border-accent/50 transition-colors">
+            <ScrollAnimation direction="up" delay={0.2}>
+          <div className="p-6 rounded-lg border border-border bg-background/50 backdrop-blur-sm hover:border-accent/50 transition-colors h-full">
             <svg
               className="w-6 h-6 text-accent mb-3"
               fill="currentColor"
@@ -112,9 +118,11 @@ export function Contact() {
             <h4 className="font-semibold text-foreground mb-2">Based In</h4>
             <p className="text-foreground/70 text-sm">Available for remote projects worldwide</p>
           </div>
+          </ScrollAnimation>
         </div>
 
         {/* Contact Form */}
+        <ScrollAnimation direction="up" delay={0.3}>
         <div className="p-8 rounded-lg border border-border bg-background/50 backdrop-blur-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Input */}
@@ -220,6 +228,7 @@ export function Contact() {
             </a>
           </div>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

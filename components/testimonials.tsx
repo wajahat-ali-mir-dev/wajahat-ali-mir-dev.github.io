@@ -1,6 +1,8 @@
 'use client';
 
 import { Star } from 'lucide-react';
+import { TypewriterEffect } from './ui/typewriter-effect';
+import { ScrollAnimation } from './ui/scroll-animation';
 
 interface Testimonial {
   id: string;
@@ -55,29 +57,31 @@ export function Testimonials() {
     <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
+        <ScrollAnimation direction="left">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-1 h-8 bg-accent rounded-full" />
             <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
-              Testimonials
+               <TypewriterEffect text="Testimonials" />
             </h2>
             <div className="w-1 h-8 bg-accent rounded-full" />
           </div>
 
           <h3 className="text-4xl font-bold text-foreground mb-4 leading-tight">
-            What Clients Say
+             <TypewriterEffect text="What Clients Say" delay={0.5} />
           </h3>
 
           <p className="text-foreground/70 max-w-2xl mx-auto">
             I'm proud of the relationships I've built and the impact I've had on my clients' projects.
           </p>
         </div>
+        </ScrollAnimation>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
+            <ScrollAnimation key={testimonial.id} direction="up" delay={index * 0.1}>
             <div
-              key={testimonial.id}
               className="p-8 rounded-lg border border-border bg-secondary/30 hover:border-accent/50 hover:bg-secondary/40 transition-all duration-300"
             >
               {/* Rating */}
@@ -113,10 +117,12 @@ export function Testimonials() {
                 </div>
               </div>
             </div>
+            </ScrollAnimation>
           ))}
         </div>
 
         {/* Stats */}
+        <ScrollAnimation direction="up" delay={0.4}>
         <div className="mt-16 grid grid-cols-3 gap-6">
           <div className="p-8 rounded-lg border border-border bg-gradient-to-br from-accent/10 to-transparent text-center">
             <p className="text-3xl font-bold text-accent mb-2">100%</p>
@@ -133,6 +139,7 @@ export function Testimonials() {
             <p className="text-sm text-foreground/70">Average Rating</p>
           </div>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

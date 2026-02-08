@@ -2,6 +2,8 @@
 
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { TypewriterEffect } from './ui/typewriter-effect';
+import { ScrollAnimation } from './ui/scroll-animation';
 
 interface BlogPost {
   id: string;
@@ -94,24 +96,27 @@ export function Blog() {
     <section id="blog" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
+        <ScrollAnimation direction="left">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-1 h-8 bg-accent rounded-full" />
             <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
-              Blog
+               <TypewriterEffect text="Blog" />
             </h2>
           </div>
 
           <h3 className="text-4xl font-bold text-foreground mb-4 leading-tight">
-            Technical Writing
+             <TypewriterEffect text="Technical Writing" delay={0.5} />
           </h3>
 
           <p className="text-foreground/70 max-w-2xl">
             I share my knowledge and experiences through articles on React Native, mobile development, and software engineering best practices.
           </p>
         </div>
+        </ScrollAnimation>
 
         {/* Featured Article */}
+        <ScrollAnimation direction="up">
         <div className="mb-12 p-8 rounded-lg border border-border bg-gradient-to-br from-accent/10 via-transparent to-transparent hover:border-accent/50 transition-colors">
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <div className="flex-1">
@@ -141,6 +146,7 @@ export function Blog() {
                   href={blogPosts[0].link}
                   target="_blank"
                   rel="follow"
+                  title={`Read "${blogPosts[0].title}" by Wajahat Ali Mir`}
                   className="flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors text-sm font-semibold group"
                 >
                   <span>Read Article</span>
@@ -150,6 +156,7 @@ export function Blog() {
             </div>
           </div>
         </div>
+        </ScrollAnimation>
 
         {/* Latest Articles */}
         <h4 className="text-lg font-semibold text-foreground mb-6">
@@ -157,13 +164,14 @@ export function Blog() {
         </h4>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {blogPosts.slice(1).map((post) => (
+          {blogPosts.slice(1).map((post, index) => (
+            <ScrollAnimation key={post.id} direction="up" delay={index * 0.1}>
             <a
-              key={post.id}
               href={post.link}
               target="_blank"
               rel="follow"
-              className="group p-6 rounded-lg border border-border hover:border-accent/50 bg-background/50 backdrop-blur-sm hover:bg-secondary/20 transition-all duration-300"
+              title={`Read "${post.title}" by Wajahat Ali Mir`}
+              className="group block p-6 rounded-lg border border-border hover:border-accent/50 bg-background/50 backdrop-blur-sm hover:bg-secondary/20 transition-all duration-300 h-full"
             >
               <div className="flex items-start justify-between mb-4">
                 <span
@@ -191,10 +199,12 @@ export function Blog() {
                 <ExternalLink className="w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </a>
+            </ScrollAnimation>
           ))}
         </div>
 
         {/* Links Section */}
+        <ScrollAnimation direction="up" delay={0.3}>
         <div className="mt-16 pt-12 border-t border-border">
           <h4 className="text-lg font-semibold text-foreground mb-6">
             Find Me On
@@ -205,6 +215,7 @@ export function Blog() {
               href="https://mrwajahatalimir.medium.com"
               target="_blank"
               rel="follow"
+              title="Wajahat Ali Mir on Medium"
               className="p-4 rounded-lg border border-border hover:border-accent/50 bg-background/50 hover:bg-secondary/20 transition-all group text-center"
             >
               <h5 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
@@ -219,6 +230,7 @@ export function Blog() {
               href="https://mrwajahatalimir.blogspot.com"
               target="_blank"
               rel="follow"
+              title="Wajahat Ali Mir Engineering Blog"
               className="p-4 rounded-lg border border-border hover:border-accent/50 bg-background/50 hover:bg-secondary/20 transition-all group text-center"
             >
               <h5 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
@@ -233,6 +245,7 @@ export function Blog() {
               href="https://mrwajahatalimir.medium.com"
               target="_blank"
               rel="follow"
+              title="Read all articles by Wajahat Ali Mir"
               className="p-4 rounded-lg border border-border hover:border-accent/50 bg-background/50 hover:bg-secondary/20 transition-all group text-center"
             >
               <h5 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
@@ -244,6 +257,7 @@ export function Blog() {
             </a>
           </div>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
