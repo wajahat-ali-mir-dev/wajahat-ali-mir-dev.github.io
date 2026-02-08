@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: 'Wajahat Ali Mir | Software Engineer & React Native Specialist',
   description: 'Wajahat Ali Mir is a Software Engineer specializing in React Native, Next.js, and mobile app development. Creating scalable, high-performance solutions for web and mobile.',
   keywords: ['Wajahat Ali Mir', 'Software Engineer', 'React Native Developer', 'Mobile App Developer', 'Next.js Developer', 'Full Stack Developer', 'React Developer', 'JavaScript', 'TypeScript', 'Portfolio'],
-  authors: [{ name: 'Wajahat Ali Mir', url: 'https://www.mrwajahatalimir.com' }],
+  authors: [{ name: 'Wajahat Ali Mir', url: 'https://wajahat-ali-mir-dev.github.io' }],
   creator: 'Wajahat Ali Mir',
   publisher: 'Wajahat Ali Mir',
   verification: {
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.mrwajahatalimir.com',
+    url: 'https://wajahat-ali-mir-dev.github.io',
     title: 'Wajahat Ali Mir | Software Engineer & React Native Specialist',
     description: 'Expert in building cross-platform mobile apps with React Native and performant web applications with Next.js.',
     siteName: 'Wajahat Ali Mir Portfolio',
     images: [
       {
-        url: 'https://www.mrwajahatalimir.com/og-image.jpg', // Assuming you might add an OG image later or use a generic one
+        url: 'https://wajahat-ali-mir-dev.github.io/og-image.jpg', // Assuming you might add an OG image later or use a generic one
         width: 1200,
         height: 630,
         alt: 'Wajahat Ali Mir - Software Engineer',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: 'Wajahat Ali Mir | Software Engineer',
     description: 'Building reliable, scalable mobile applications with clean design and smooth user experiences.',
     creator: '@mrwajahatalimir',
-    images: ['https://www.mrwajahatalimir.com/og-image.jpg'],
+    images: ['https://wajahat-ali-mir-dev.github.io/og-image.jpg'],
   },
   icons: {
     icon: [
@@ -97,8 +97,8 @@ export default function RootLayout({
     "givenName": "Wajahat",
     "familyName": "Ali Mir",
     "jobTitle": ["Software Engineer", "React Native Developer", "Web Developer", "Full Stack Developer"],
-    "url": "https://www.mrwajahatalimir.com",
-    "image": "https://www.mrwajahatalimir.com/wajahat-ali-mir-dev-coding-image.gif",
+    "url": "https://wajahat-ali-mir-dev.github.io",
+    "image": "https://wajahat-ali-mir-dev.github.io/wajahat-ali-mir-dev-coding-image.gif",
     "sameAs": [
       "https://wajahat-ali-mir-dev.github.io",
       "https://www.mrwajahatalimir.com",

@@ -3,16 +3,16 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.mrwajahatalimir.com';
+  const baseUrl = 'https://wajahat-ali-mir-dev.github.io';
   
   // Add static pages here
   const routes = [
     '',
-    '/about',
-    '/projects',
-    '/contact',
-    '/blog',
-    '/links-hub',
+    '#about',
+    '#projects',
+    '#contact',
+    '#blog',
+    '#links',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
