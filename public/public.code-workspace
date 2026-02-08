@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../app"
+		},
+		{
+			"path": "../components"
+		},
+		{
+			"path": "../lib"
+		},
+		{
+			"path": "../node_modules"
+		}
+	]
+}

@@ -32,6 +32,7 @@ export const metadata: Metadata = {
   publisher: 'Wajahat Ali Mir',
   verification: {
     google: "oLqH14kJZyXdF0EL-juQ2o8s2KVcBp6lSYLq-R5CpBg",
+    yandex: "a53070f63f56e499",
   },
   robots: {
     index: true,
