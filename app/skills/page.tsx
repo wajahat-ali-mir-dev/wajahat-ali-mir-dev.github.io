@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { Skills } from '@/components/skills';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import { Skills } from '../../components/skills';
+import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 export const metadata: Metadata = {
   title: 'Skills | Wajahat Ali Mir - Technical Expertise',

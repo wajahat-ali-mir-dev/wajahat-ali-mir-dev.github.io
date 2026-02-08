@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { Contact } from '@/components/contact';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import { Contact } from '../../components/contact';
+import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 export const metadata: Metadata = {
   title: 'Contact | Wajahat Ali Mir - Get In Touch',

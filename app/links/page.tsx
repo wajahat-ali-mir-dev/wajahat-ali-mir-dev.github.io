@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { LinksHub } from '@/components/links-hub';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import { LinksHub } from '../../components/links-hub';
+import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 export const metadata: Metadata = {
   title: 'Links | Wajahat Ali Mir - Connect With Me',
