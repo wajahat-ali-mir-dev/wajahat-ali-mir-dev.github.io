@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://wajahat-ali-mir-dev.github.io/sitemap.xml
