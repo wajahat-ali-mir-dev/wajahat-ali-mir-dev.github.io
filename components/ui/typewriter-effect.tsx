@@ -1,63 +1,67 @@
 "use client";
 
+import { memo, useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 
 interface TypewriterEffectProps {
   text: string | string[];
   className?: string;
-  cursorClassName?: string;
   speed?: number;
   delay?: number;
 }
 
-export function TypewriterEffect({
+export const TypewriterEffect = memo(function TypewriterEffect({
   text,
   className,
-  cursorClassName,
-  speed = 0.05,
+  speed = 0.04,
   delay = 0,
 }: TypewriterEffectProps) {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const hasAnimated = useRef(false);
 
-  const textArray = Array.isArray(text) ? text : [text];
-  const fullText = textArray.join(""); // For simple typing, join if array, or enhance for multi-line later if needed.
+  const fullText = Array.isArray(text) ? text.join("") : text;
 
   useEffect(() => {
-    if (isInView && !isTyping) {
+    if (isInView && !hasAnimated.current && !isTyping) {
+      hasAnimated.current = true;
       setIsTyping(true);
-      let i = 0;
-      setDisplayText(""); // Ensure starts empty
       
-      const typeInterval = setInterval(() => {
-        if (i < fullText.length) {
-          setDisplayText(fullText.slice(0, i + 1));
-          i++;
-        } else {
-          clearInterval(typeInterval);
-          setIsTyping(false);
-        }
-      }, speed * 1000);
+      const startTimeout = setTimeout(() => {
+        let i = 0;
+        setDisplayText("");
+        
+        const typeInterval = setInterval(() => {
+          if (i < fullText.length) {
+            setDisplayText(fullText.slice(0, i + 1));
+            i++;
+          } else {
+            clearInterval(typeInterval);
+            setIsTyping(false);
+          }
+        }, speed * 1000);
 
-      return () => clearInterval(typeInterval);
-    } else if (!isInView) {
-      setDisplayText("");
-      setIsTyping(false);
+        return () => clearInterval(typeInterval);
+      }, delay * 1000);
+
+      return () => clearTimeout(startTimeout);
     }
-  }, [isInView, fullText, speed]);
+  }, [isInView, fullText, speed, delay, isTyping]);
 
   return (
     <span ref={ref} className={className}>
       {displayText}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-        className={`inline-block w-[2px] h-[1em] bg-current ml-1 align-middle ${cursorClassName}`}
-      />
+      {isTyping && (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, repeat: Infinity, repeatType: "reverse" }}
+          className="inline-block w-[2px] h-[1em] bg-current ml-0.5 align-middle"
+          aria-hidden="true"
+        />
+      )}
     </span>
   );
-}
+});

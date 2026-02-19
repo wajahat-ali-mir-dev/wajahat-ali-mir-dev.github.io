@@ -1,0 +1,27 @@
+{
+  "name": "Wajahat Ali Mir Portfolio",
+  "short_name": "Wajahat Mir",
+  "description": "Portfolio of Wajahat Ali Mir - Senior Software Engineer specializing in React Native and Next.js",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["portfolio", "technology", "developer"],
+  "icons": [
+    {
+      "src": "/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/wajahat-ali-mir-apple-logo.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

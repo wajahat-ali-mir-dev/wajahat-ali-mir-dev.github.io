@@ -1,6 +1,6 @@
 'use client';
 
-import { Star } from 'lucide-react';
+import { Star, Quote, MessageSquare } from 'lucide-react';
 import { TypewriterEffect } from './ui/typewriter-effect';
 import { ScrollAnimation } from './ui/scroll-animation';
 
@@ -16,8 +16,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: '1',
-    content:
-      "Wajahat is an exceptional developer who delivered our mobile app ahead of schedule. His attention to detail and clean code practices made the entire project smooth and maintainable.",
+    content: "Wajahat is an exceptional developer who delivered our mobile app ahead of schedule. His attention to detail and clean code practices made the entire project smooth and maintainable.",
     author: 'Sarah Johnson',
     role: 'Product Manager',
     company: 'Tech Startup Inc',
@@ -25,8 +24,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: '2',
-    content:
-      'Working with Wajahat was a game-changer. He implemented complex offline functionality that we thought was impossible. His technical expertise and problem-solving skills are outstanding.',
+    content: 'Working with Wajahat was a game-changer. He implemented complex offline functionality that we thought was impossible. His technical expertise and problem-solving skills are outstanding.',
     author: 'Michael Chen',
     role: 'CTO',
     company: 'Digital Solutions Ltd',
@@ -34,8 +32,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: '3',
-    content:
-      "I appreciated Wajahat's proactive communication and willingness to explain technical decisions. He not only built what we asked for but suggested improvements that made the app better.",
+    content: "I appreciated Wajahat's proactive communication and willingness to explain technical decisions. He not only built what we asked for but suggested improvements that made the app better.",
     author: 'Emily Rodriguez',
     role: 'Founder',
     company: 'Mobile First Agency',
@@ -43,8 +40,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: '4',
-    content:
-      'The performance optimizations Wajahat implemented reduced our app load time by 60%. His understanding of React Native internals is truly impressive.',
+    content: 'The performance optimizations Wajahat implemented reduced our app load time by 60%. His understanding of React Native internals is truly impressive.',
     author: 'David Smith',
     role: 'Engineering Lead',
     company: 'FinTech Solutions',
@@ -52,93 +48,97 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+const stats = [
+  { value: '100%', label: 'Client Satisfaction' },
+  { value: '15+', label: 'Successful Projects' },
+  { value: '5⭐', label: 'Average Rating' },
+];
+
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
+    <section id="testimonials" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[var(--neon-purple)]/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative">
         <ScrollAnimation direction="left">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-1 h-8 bg-accent rounded-full" />
-            <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
-               <TypewriterEffect text="Testimonials" />
-            </h2>
-            <div className="w-1 h-8 bg-accent rounded-full" />
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full glass border border-accent/20">
+              <MessageSquare className="w-4 h-4 text-accent" />
+              <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
+                <TypewriterEffect text="Testimonials" />
+              </h2>
+            </div>
+
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <TypewriterEffect text="What Clients Say" delay={0.5} />
+            </h3>
+
+            <p className="text-foreground/60 max-w-2xl mx-auto text-lg">
+              I'm proud of the relationships I've built and the impact I've had on my clients' projects.
+            </p>
           </div>
-
-          <h3 className="text-4xl font-bold text-foreground mb-4 leading-tight">
-             <TypewriterEffect text="What Clients Say" delay={0.5} />
-          </h3>
-
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            I'm proud of the relationships I've built and the impact I've had on my clients' projects.
-          </p>
-        </div>
         </ScrollAnimation>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <ScrollAnimation key={testimonial.id} direction="up" delay={index * 0.1}>
-            <div
-              className="p-8 rounded-lg border border-border bg-secondary/30 hover:border-accent/50 hover:bg-secondary/40 transition-all duration-300"
-            >
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-accent text-accent"
-                  />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-foreground mb-6 leading-relaxed italic">
-                "{testimonial.content}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-border">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent font-bold text-lg">
-                    {testimonial.author.charAt(0)}
-                  </span>
+              <div className="group relative p-8 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover h-full flex flex-col">
+                <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Quote className="w-12 h-12 text-accent" />
                 </div>
 
-                <div>
-                  <p className="font-semibold text-foreground">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-sm text-foreground/70">
-                    {testimonial.role} at {testimonial.company}
-                  </p>
+                <div className="flex gap-1 mb-5">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-accent text-accent"
+                    />
+                  ))}
+                </div>
+
+                <p className="text-foreground/80 mb-6 leading-relaxed flex-grow text-lg italic">
+                  "{testimonial.content}"
+                </p>
+
+                <div className="flex items-center gap-4 pt-6 border-t border-border/50">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-[var(--neon-cyan)] rounded-full blur opacity-40" />
+                    <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-[var(--neon-cyan)]/20 flex items-center justify-center border border-accent/30">
+                      <span className="text-accent font-bold text-xl">
+                        {testimonial.author.charAt(0)}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-foreground text-lg">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-sm text-foreground/60">
+                      {testimonial.role} at {testimonial.company}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
             </ScrollAnimation>
           ))}
         </div>
 
-        {/* Stats */}
         <ScrollAnimation direction="up" delay={0.4}>
-        <div className="mt-16 grid grid-cols-3 gap-6">
-          <div className="p-8 rounded-lg border border-border bg-gradient-to-br from-accent/10 to-transparent text-center">
-            <p className="text-3xl font-bold text-accent mb-2">100%</p>
-            <p className="text-sm text-foreground/70">Client Satisfaction</p>
+          <div className="mt-16 grid grid-cols-3 gap-6">
+            {stats.map((stat, index) => (
+              <div key={index} className="group relative p-8 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover text-center">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <p className="text-3xl sm:text-4xl font-bold gradient-text mb-2">{stat.value}</p>
+                  <p className="text-sm text-foreground/60">{stat.label}</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="p-8 rounded-lg border border-border bg-gradient-to-br from-accent/10 to-transparent text-center">
-            <p className="text-3xl font-bold text-accent mb-2">15+</p>
-            <p className="text-sm text-foreground/70">Successful Projects</p>
-          </div>
-
-          <div className="p-8 rounded-lg border border-border bg-gradient-to-br from-accent/10 to-transparent text-center">
-            <p className="text-3xl font-bold text-accent mb-2">5⭐</p>
-            <p className="text-sm text-foreground/70">Average Rating</p>
-          </div>
-        </div>
         </ScrollAnimation>
       </div>
     </section>

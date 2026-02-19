@@ -4,13 +4,16 @@ import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 
 export const metadata: Metadata = {
-  title: 'Blog | Wajahat Ali Mir - Technical Writing',
-  description: 'Read technical articles by Wajahat Ali Mir on React Native, mobile development, TypeScript, and software engineering best practices.',
-  keywords: ['Wajahat Ali Mir', 'Blog', 'Technical Writing', 'React Native', 'Mobile Development', 'TypeScript'],
+  title: 'Blog & Insights | Wajahat Ali Mir',
+  description: 'Read insightful articles and tutorials by Wajahat Ali Mir on React Native, Next.js, performance optimization, and software architecture. Staying ahead in the tech world.',
+  keywords: ['Tech Blog', 'React Native Tutorials', 'Software Engineering Articles', 'Next.js Tips', 'Performance Optimization', 'Coding Blog'],
   openGraph: {
-    title: 'Blog by Wajahat Ali Mir',
-    description: 'Technical articles on React Native, mobile development, and software engineering.',
+    title: 'Tech Insights & Tutorials | Wajahat Ali Mir',
+    description: 'Deep dives into React Native, web performance, and modern software engineering practices.',
     url: 'https://wajahat-ali-mir-dev.github.io/blog',
+  },
+  alternates: {
+    canonical: 'https://wajahat-ali-mir-dev.github.io/blog',
   },
 };
 
@@ -18,7 +21,18 @@ export default function BlogPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="pt-24 container mx-auto px-4">
+        <section className="mb-12 max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Technical Insights</h1>
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-4">
+              Writing is how I crystalize my understanding of complex topics. Here you'll find deep dives into 
+              <strong>React Native architecture</strong>, <strong>Next.js optimization techniques</strong>, and 
+              general software engineering best practices.
+            </p>
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              My goal is to share knowledge that helps other developers build better, faster, and more scalable applications.
+            </p>
+        </section>
         <Blog />
       </main>
       <Footer />

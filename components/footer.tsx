@@ -7,31 +7,16 @@ import {
   Twitter,
   Mail,
   ExternalLink,
+  Heart,
+  Sparkles,
 } from 'lucide-react';
-import { TypewriterEffect } from './ui/typewriter-effect';
 import { ScrollAnimation } from './ui/scroll-animation';
 
 const socialLinks = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com/wajahat-ali-mir-dev',
-    icon: Github,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev',
-    icon: Linkedin,
-  },
-  {
-    name: 'Twitter',
-    href: 'https://x.com/mrwajahatalimir',
-    icon: Twitter,
-  },
-  {
-    name: 'Email',
-    href: 'mailto:mrwajahatalimir@gmail.com',
-    icon: Mail,
-  },
+  { name: 'GitHub', href: 'https://github.com/wajahat-ali-mir-dev', icon: Github },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/wajahat-ali-mir-dev', icon: Linkedin },
+  { name: 'Twitter', href: 'https://x.com/mrwajahatalimir', icon: Twitter },
+  { name: 'Email', href: 'mailto:mrwajahatalimir@gmail.com', icon: Mail },
 ];
 
 const quickLinks = [
@@ -64,184 +49,161 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-border">
-      {/* Main Footer Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="relative overflow-hidden border-t border-border/50">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[var(--neon-purple)]/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <ScrollAnimation direction="up">
-        <div className="grid md:grid-cols-6 gap-8 mb-12">
-          {/* Brand */}
-          <div className="col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center group-hover:bg-accent/90 transition-colors">
-                <span className="text-accent-foreground font-bold text-lg">W</span>
-              </div>
-              <span className="font-bold text-foreground">
-                 <TypewriterEffect text="Wajahat" delay={0.2} />
-              </span>
-            </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+            <div className="lg:col-span-2">
+              <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-accent/30 rounded-xl blur-md group-hover:blur-lg transition-all duration-300 opacity-60 group-hover:opacity-100" />
+                  <div className="relative w-12 h-12 bg-gradient-to-br from-accent to-[var(--neon-cyan)] rounded-xl flex items-center justify-center group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300">
+                    <span className="text-accent-foreground font-bold text-xl">W</span>
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-bold text-foreground text-lg">Wajahat Ali Mir</span>
+                  <span className="text-xs text-accent flex items-center gap-1">
+                    <Sparkles className="w-3 h-3" />
+                    Software Engineer
+                  </span>
+                </div>
+              </Link>
 
-            <p className="text-foreground/70 text-sm leading-relaxed">
-              Building reliable, scalable mobile applications with clean design and smooth user experiences.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex gap-3 mt-6">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="follow"
-                    aria-label={`Wajahat Ali Mir on ${social.name}`}
-                    title={`Wajahat Ali Mir on ${social.name}`}
-                    className="p-2 rounded-lg bg-secondary/50 hover:bg-accent/20 text-foreground hover:text-accent transition-all duration-300"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    title={link.name === 'Portfolio' ? 'Wajahat Ali Mir Portfolio' : link.name}
-                    className="text-foreground/70 hover:text-accent transition-colors text-sm"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Profiles */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Development</h3>
-            <ul className="space-y-2">
-              {externalLinks.slice(0, 5).map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="follow"
-                    title={`Wajahat Ali Mir on ${link.name}`}
-                    aria-label={`Wajahat Ali Mir on ${link.name}`}
-                    className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
-                  >
-                    <span>{link.name}</span>
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Content & Writing */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Content</h3>
-            <ul className="space-y-2">
-              {externalLinks.slice(5, 9).map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="follow"
-                    title={`Wajahat Ali Mir on ${link.name}`}
-                    className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
-                  >
-                    <span>{link.name}</span>
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* More Platforms */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Connect</h3>
-            <ul className="space-y-2">
-              {externalLinks.slice(9).map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="follow"
-                    title={`Wajahat Ali Mir on ${link.name}`}
-                    className="text-foreground/70 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
-                  >
-                    <span>{link.name}</span>
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Get In Touch</h3>
-            <div className="space-y-4">
-              <p className="text-foreground/70 text-sm">
-                Have a project? Let's talk about it.
+              <p className="text-foreground/60 text-sm leading-relaxed mb-6 max-w-sm">
+                Building reliable, scalable mobile applications with clean design and smooth user experiences.
               </p>
 
-              <a
-                href="mailto:mrwajahatalimir@gmail.com"
-                title="Email Wajahat Ali Mir"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors text-sm font-semibold"
-              >
-                <Mail className="w-4 h-4" />
-                <span>Send Email</span>
-              </a>
+              <div className="flex gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Wajahat Ali Mir on ${social.name}`}
+                      title={`Wajahat Ali Mir on ${social.name}`}
+                      className="w-10 h-10 rounded-xl glass border border-border hover:border-accent/50 flex items-center justify-center text-foreground hover:text-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/10"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
+              <ul className="space-y-2.5">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      title={link.name === 'Portfolio' ? 'Wajahat Ali Mir Portfolio' : link.name}
+                      className="text-foreground/60 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Development</h3>
+              <ul className="space-y-2.5">
+                {externalLinks.slice(0, 5).map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Wajahat Ali Mir on ${link.name}`}
+                      className="text-foreground/60 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                      <span>{link.name}</span>
+                      <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Connect</h3>
+              <ul className="space-y-2.5">
+                {externalLinks.slice(5, 10).map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Wajahat Ali Mir on ${link.name}`}
+                      className="text-foreground/60 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                      <span>{link.name}</span>
+                      <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
         </ScrollAnimation>
 
-        {/* Bottom Section */}
-        <div className="pt-8 border-t border-border">
+        <ScrollAnimation direction="up" delay={0.1}>
+          <div className="p-6 rounded-2xl glass border border-border/50 text-center mb-8">
+            <h4 className="font-semibold text-foreground mb-2">Get In Touch</h4>
+            <p className="text-foreground/60 text-sm mb-4">Have a project? Let's talk about it.</p>
+            <a
+              href="mailto:mrwajahatalimir@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-[var(--neon-cyan)] text-accent-foreground hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 text-sm font-semibold"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Send Email</span>
+            </a>
+          </div>
+        </ScrollAnimation>
+
+        <div className="pt-8 border-t border-border/50">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-foreground/60 text-sm">
-              © {currentYear} Wajahat Ali Mir. All rights reserved.
+            <p className="text-foreground/50 text-sm flex items-center gap-2">
+              © {currentYear} Wajahat Ali Mir. Made with
+              <Heart className="w-4 h-4 text-red-500 fill-red-500" />
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               <a
                 href="https://www.mrwajahatalimir.com"
                 target="_blank"
-                rel="follow"
-                title="Wajahat Ali Mir Portfolio Website"
-                className="text-foreground/60 hover:text-accent transition-colors text-sm"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-accent transition-colors text-sm"
               >
                 Website
               </a>
-              <span className="text-foreground/30">•</span>
               <a
                 href="https://x.com/mrwajahatalimir"
                 target="_blank"
-                rel="follow"
-                title="Wajahat Ali Mir on Twitter"
-                className="text-foreground/60 hover:text-accent transition-colors text-sm"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-accent transition-colors text-sm"
               >
                 Twitter
               </a>
-              <span className="text-foreground/30">•</span>
               <a
                 href="https://github.com/wajahat-ali-mir-dev"
                 target="_blank"
-                rel="follow"
-                title="Wajahat Ali Mir on GitHub"
-                className="text-foreground/60 hover:text-accent transition-colors text-sm"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-accent transition-colors text-sm"
               >
                 GitHub
               </a>

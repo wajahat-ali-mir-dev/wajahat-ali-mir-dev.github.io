@@ -5,12 +5,15 @@ import { Footer } from '../../components/footer';
 
 export const metadata: Metadata = {
   title: 'Contact | Wajahat Ali Mir - Get In Touch',
-  description: 'Contact Wajahat Ali Mir for software development projects, mobile app development, or collaboration opportunities.',
-  keywords: ['Wajahat Ali Mir', 'Contact', 'Hire', 'Software Development', 'Mobile App Development', 'Freelance'],
+  description: 'Ready to start your next project? Contact Wajahat Ali Mir for expert React Native and Next.js development services. Let\'s build something extraordinary together.',
+  keywords: ['Wajahat Ali Mir', 'Contact', 'Hire', 'Software Development', 'Mobile App Development', 'Freelance', 'Consulting'],
   openGraph: {
-    title: 'Contact Wajahat Ali Mir',
-    description: 'Get in touch for software development projects and collaborations.',
+    title: 'Contact Wajahat Ali Mir | Software Engineer',
+    description: 'Get in touch for software development projects, consulting, and collaborations.',
     url: 'https://wajahat-ali-mir-dev.github.io/contact',
+  },
+  alternates: {
+    canonical: 'https://wajahat-ali-mir-dev.github.io/contact',
   },
 };
 
@@ -18,7 +21,18 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="pt-24 container mx-auto px-4">
+        <section className="mb-12 max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Get In Touch</h1>
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-4">
+              Whether you have a complex <strong>mobile app idea</strong>, need a <strong>high-performance web platform</strong>, 
+              or just want to discuss the latest in tech, I'm always open to new opportunities.
+            </p>
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              I specialize in turning vision into reality through clean code and strategic architecture. 
+              Fill out the form below or reach out directly to start the conversation.
+            </p>
+        </section>
         <Contact />
       </main>
       <Footer />
