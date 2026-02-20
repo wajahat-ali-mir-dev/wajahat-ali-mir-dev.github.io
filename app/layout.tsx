@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const geist = Geist({
@@ -16,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: 'swap',
-  preload: true,
+  preload: false,
   fallback: ['monospace'],
 });
 
@@ -132,7 +131,7 @@ export default function RootLayout({
           "https://mrwajahatalimir.medium.com",
         ],
         "knowsAbout": [
-          "React Native", "React", "Next.js", "JavaScript", "TypeScript", 
+          "React Native", "React", "Next.js", "JavaScript", "TypeScript",
           "Mobile Development", "Web Development", "Node.js", "GraphQL", "REST APIs"
         ],
       },
@@ -152,8 +151,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,7 +163,6 @@ export default function RootLayout({
       </head>
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
-        <Analytics />
       </body>
     </html>
   )

@@ -13,24 +13,54 @@ export const metadata: Metadata = {
     url: 'https://wajahat-ali-mir-dev.github.io/skills',
   },
   alternates: {
-    canonical: 'https://wajahat-ali-mir-dev.github.io/skills',
+    canonical: 'https://wajahat-ali-mir-dev.github.io/skills/',
   },
 };
 
 export default function SkillsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://wajahat-ali-mir-dev.github.io/skills/#webpage",
+    "name": "Technical Skills & Expertise | Wajahat Ali Mir",
+    "description": "Wajahat Ali Mir's technical skills: React Native, TypeScript, Next.js, GraphQL, Node.js, system architecture.",
+    "url": "https://wajahat-ali-mir-dev.github.io/skills/",
+    "about": { "@id": "https://wajahat-ali-mir-dev.github.io/#person" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Technical Skills",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "React Native" },
+        { "@type": "ListItem", "position": 2, "name": "TypeScript" },
+        { "@type": "ListItem", "position": 3, "name": "Next.js" },
+        { "@type": "ListItem", "position": 4, "name": "Node.js" },
+        { "@type": "ListItem", "position": 5, "name": "GraphQL" },
+        { "@type": "ListItem", "position": 6, "name": "System Architecture" }
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wajahat-ali-mir-dev.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Skills", "item": "https://wajahat-ali-mir-dev.github.io/skills/" }
+      ]
+    }
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main className="pt-24 container mx-auto px-4">
         <section className="mb-12 max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Technical Skills & Expertise</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Technical Skills &amp; Expertise</h1>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-4">
-            My technical foundation is built on modern JavaScript and the React ecosystem. I possess deep expertise in 
-            <strong>React Native</strong> for building near-native mobile experiences and <strong>Next.js</strong> for server-rendered web applications.
+            My technical foundation is built on modern JavaScript and the React ecosystem. I possess deep expertise in
+            <strong> React Native</strong> for building near-native mobile experiences and <strong>Next.js</strong> for server-rendered web applications.
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-            Beyond coding, I focus on <strong>system architecture</strong>, <strong>performance optimization</strong>, and 
-            <strong>maintainable codebases</strong>. I continuously stay updated with the latest industry trends to deliver 
+            Beyond coding, I focus on <strong>system architecture</strong>, <strong>performance optimization</strong>, and
+            <strong> maintainable codebases</strong>. I continuously stay updated with the latest industry trends to deliver
             cutting-edge solutions.
           </p>
         </section>

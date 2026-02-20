@@ -32,9 +32,13 @@ const floatingElements = [
 
 export function Hero() {
   const handleScroll = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    try {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch {
+      // On sub-pages these anchors won't exist – silently ignore
     }
   };
 
@@ -125,7 +129,7 @@ export function Hero() {
                       <a
                         href={social.href}
                         target="_blank"
-                        rel="follow"
+                        rel="noopener follow"
                         aria-label={`Wajahat Ali Mir on ${social.name}`}
                         title={`Wajahat Ali Mir on ${social.name}`}
                         className="group relative p-4 rounded-xl glass border border-border hover:border-accent/50 text-foreground hover:text-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/10"
@@ -144,18 +148,19 @@ export function Hero() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 via-[var(--neon-purple)]/20 to-[var(--neon-cyan)]/20 rounded-3xl blur-2xl animate-pulse-glow" />
                 <div className="absolute -inset-1 bg-gradient-to-r from-accent via-[var(--neon-purple)] to-[var(--neon-cyan)] rounded-2xl opacity-20 blur-sm" />
-                
+
                 <div className="relative w-80 h-80 rounded-2xl overflow-hidden border-2 border-accent/40 hover:border-accent transition-all duration-500 shadow-2xl hover:shadow-accent/20 group">
-                  <NextImage 
-                    src="/wajahat-ali-mir-dev-coding-image.gif" 
+                  <NextImage
+                    src="/wajahat-ali-mir-dev-coding-image.gif"
                     alt="Wajahat Ali Mir Coding"
                     title="Wajahat Ali Mir - Coding & Development"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     unoptimized
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 glass rounded-lg p-3 border border-accent/20">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />

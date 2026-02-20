@@ -27,7 +27,8 @@ export function GalleryGrid() {
         <ScrollAnimation direction="up">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full glass border border-accent/20">
-              <Image className="w-4 h-4 text-accent" />
+              <Image className="w-4 h-4 text-accent" aria-hidden="true" />
+
               <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
                 <TypewriterEffect text="Gallery" />
               </h2>
@@ -75,6 +76,7 @@ export function GalleryGrid() {
                     height={800}
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
                   />
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-20">

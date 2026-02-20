@@ -139,11 +139,25 @@
     background-image: 
       radial-gradient(ellipse 80% 80% at 50% -20%, oklch(0.25 0.10 250 / 0.15), transparent),
       radial-gradient(ellipse 60% 60% at 100% 100%, oklch(0.25 0.08 195 / 0.1), transparent);
-    background-attachment: fixed;
+    /* Fixed attachment causes repaints on mobile — use scroll instead */
+    background-attachment: scroll;
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 @layer utilities {
+
   .glass {
     @apply bg-background/70 backdrop-blur-xl border border-foreground/10;
     box-shadow: 

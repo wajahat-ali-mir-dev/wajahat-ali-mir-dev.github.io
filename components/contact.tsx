@@ -1,7 +1,6 @@
 'use client';
 
-import React from "react"
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Mail, Loader2, Check, AlertCircle, MapPin, Send, MessageCircle } from 'lucide-react';
 import { TypewriterEffect } from './ui/typewriter-effect';
 import { ScrollAnimation } from './ui/scroll-animation';
@@ -44,14 +43,21 @@ export function Contact() {
     setErrorMessage('');
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log('Form submitted:', formData);
+      // Opens the user's default mail client with pre-filled content.
+      // This works on GitHub Pages without any backend.
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoUrl = `mailto:mrwajahatalimir@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoUrl;
+
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus('idle'), 5000);
     } catch {
       setStatus('error');
-      setErrorMessage('Failed to send message. Please try again.');
+      setErrorMessage('Could not open email client. Please email mrwajahatalimir@gmail.com directly.');
     }
   };
 
@@ -77,7 +83,7 @@ export function Contact() {
             </h3>
 
             <p className="text-foreground/60 leading-relaxed text-lg">
-              Have a project in mind or just want to chat? I'd love to hear from you.
+              Have a project in mind or just want to chat? I&apos;d love to hear from you.
             </p>
           </div>
         </ScrollAnimation>
@@ -171,7 +177,10 @@ export function Contact() {
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-3">
                   <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-emerald-500">
-                    Message sent successfully! I'll get back to you soon.
+                    Your email client should open with the message pre-filled. If not, email me directly at{' '}
+                    <a href="mailto:mrwajahatalimir@gmail.com" className="underline">
+                      mrwajahatalimir@gmail.com
+                    </a>
                   </p>
                 </div>
               )}
@@ -184,12 +193,12 @@ export function Contact() {
                 {status === 'loading' ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Sending...</span>
+                    <span>Opening email client...</span>
                   </>
                 ) : status === 'success' ? (
                   <>
                     <Check className="w-5 h-5" />
-                    <span>Sent Successfully</span>
+                    <span>Email Client Opened</span>
                   </>
                 ) : (
                   <>

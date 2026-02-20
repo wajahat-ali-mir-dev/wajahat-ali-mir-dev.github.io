@@ -13,13 +13,31 @@ export const metadata: Metadata = {
     url: 'https://wajahat-ali-mir-dev.github.io/links',
   },
   alternates: {
-    canonical: 'https://wajahat-ali-mir-dev.github.io/links',
+    canonical: 'https://wajahat-ali-mir-dev.github.io/links/',
   },
 };
 
 export default function LinksPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://wajahat-ali-mir-dev.github.io/links/#webpage",
+    "name": "Connect With Wajahat Ali Mir | Links Hub",
+    "description": "Central hub for all of Wajahat Ali Mir's social profiles, projects, and resources.",
+    "url": "https://wajahat-ali-mir-dev.github.io/links/",
+    "mainEntity": { "@id": "https://wajahat-ali-mir-dev.github.io/#person" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wajahat-ali-mir-dev.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Links", "item": "https://wajahat-ali-mir-dev.github.io/links/" }
+      ]
+    }
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main className="pt-24 container mx-auto px-4">
         <section className="mb-8 max-w-4xl mx-auto text-center">
