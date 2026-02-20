@@ -10,6 +10,7 @@ const allLinks = [
     links: [
       { name: 'Main Portfolio', href: 'https://www.mrwajahatalimir.com', description: 'Personal portfolio website' },
       { name: 'GitHub Portfolio', href: 'https://wajahat-ali-mir-dev.github.io', description: 'GitHub hosted portfolio' },
+      { name: 'Vercel Portfolio', href: 'https://wajahat-ali-mir-dev.vercel.app', description: 'Vercel deployment mirror' },
     ],
   },
   {
@@ -64,7 +65,7 @@ export function LinksHub() {
     <section id="links" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-[var(--neon-purple)]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-(--neon-purple)/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 dot-pattern opacity-20" />
       </div>
 
@@ -91,7 +92,7 @@ export function LinksHub() {
             <ScrollAnimation key={section.category} direction="up" delay={sectionIndex * 0.1}>
               <div className="h-full">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-1.5 h-7 rounded-full bg-gradient-to-b ${section.gradient}`} />
+                  <div className={`w-1.5 h-7 rounded-full bg-linear-to-b ${section.gradient}`} />
                   <h4 className="text-lg font-semibold text-foreground">
                     {section.category}
                   </h4>
@@ -108,7 +109,7 @@ export function LinksHub() {
                       aria-label={`Wajahat Ali Mir on ${link.name}`}
                       className="group relative block p-5 rounded-xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover"
                     >
-                      <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${section.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                      <div className={`absolute inset-0 rounded-xl bg-linear-to-r ${section.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                       <div className="flex items-start justify-between gap-4 relative">
                         <div className="flex-1">
                           <h5 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
@@ -140,7 +141,7 @@ export function LinksHub() {
             </p>
             <a
               href="mailto:mrwajahatalimir@gmail.com"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-[var(--neon-cyan)] text-accent-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-105"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-linear-to-r from-accent to-(--neon-cyan) text-accent-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-105"
             >
               <span>Send me an Email</span>
               <ArrowRight className="w-5 h-5" />

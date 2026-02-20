@@ -20,13 +20,14 @@ export function GalleryGrid() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden pt-28">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-[var(--neon-purple)]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-(--neon-purple)/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         <ScrollAnimation direction="up">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full glass border border-accent/20">
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
               <Image className="w-4 h-4 text-accent" aria-hidden="true" />
 
               <h2 className="text-sm font-bold text-accent uppercase tracking-wider">
@@ -50,7 +51,7 @@ export function GalleryGrid() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-accent to-[var(--neon-cyan)] text-accent-foreground shadow-lg shadow-accent/20'
+                    ? 'bg-linear-to-r from-accent to-(--neon-cyan) text-accent-foreground shadow-lg shadow-accent/20'
                     : 'glass border border-border hover:border-accent/50 text-foreground'
                 }`}
               >
@@ -66,7 +67,7 @@ export function GalleryGrid() {
                 className="break-inside-avoid relative group rounded-2xl overflow-hidden border border-border/50 hover:border-accent/40 bg-card transition-all duration-500 card-hover"
               >
                 <div className="relative w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-[var(--neon-purple)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                  <div className="absolute inset-0 bg-linear-to-br from-accent/10 via-transparent to-(--neon-purple)/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   
                   <NextImage
                     src={image.src}
@@ -79,7 +80,7 @@ export function GalleryGrid() {
                     loading="lazy"
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-20">
+                  <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-20">
                     <div className="glass rounded-xl p-4 border border-accent/20">
                       <h3 className="text-foreground font-bold text-lg mb-1">
                         {image.title}

@@ -40,6 +40,9 @@ export function Header() {
           : 'bg-transparent py-5'
       }`}
     >
+      {scrolled && (
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] nav-accent-line" />
+      )}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative">
@@ -64,18 +67,24 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                 activeItem === item.href
                   ? 'text-accent'
-                  : 'text-foreground/70 hover:text-foreground'
+                  : 'text-foreground/60 hover:text-foreground'
               }`}
             >
               {activeItem === item.href && (
-                <span className="absolute inset-0 bg-accent/10 rounded-lg border border-accent/30" />
+                <span
+                  className="absolute inset-0 rounded-lg border border-accent/40"
+                  style={{
+                    background: 'oklch(0.70 0.25 195 / 0.08)',
+                    boxShadow: '0 0 12px oklch(0.70 0.25 195 / 0.15), inset 0 1px 0 oklch(1 0 0 / 0.1)'
+                  }}
+                />
               )}
-              <span className="relative">{item.name}</span>
-              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-accent to-[var(--neon-cyan)] transition-all duration-300 rounded-full ${
-                activeItem === item.href ? 'w-1/2' : 'group-hover:w-1/2'
+              <span className="relative z-10">{item.name}</span>
+              <span className={`absolute bottom-0.5 left-1/2 -translate-x-1/2 h-[2px] bg-linear-to-r from-accent to-(--neon-cyan) transition-all duration-300 rounded-full shadow-sm shadow-accent/50 ${
+                activeItem === item.href ? 'w-3/5' : 'w-0 group-hover:w-2/5'
               }`} />
             </Link>
           ))}
@@ -83,10 +92,10 @@ export function Header() {
 
         <Link
           href="/contact"
-          className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-accent to-[var(--neon-cyan)] text-accent-foreground rounded-xl font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:scale-105"
+          className="shimmer-border hidden md:flex items-center gap-2 px-6 py-2.5 bg-linear-to-r from-accent to-(--neon-cyan) text-accent-foreground rounded-xl font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent/40 hover:scale-105"
         >
           <span>Get in Touch</span>
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </Link>
@@ -130,7 +139,7 @@ export function Header() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 w-full mt-4 px-4 py-3 bg-gradient-to-r from-accent to-[var(--neon-cyan)] text-accent-foreground rounded-xl font-medium text-sm transition-all duration-300"
+              className="flex items-center justify-center gap-2 w-full mt-4 px-4 py-3 bg-linear-to-r from-accent to-(--neon-cyan) text-accent-foreground rounded-xl font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent/30"
             >
               <span>Get in Touch</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -65,7 +65,7 @@ export function Contact() {
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--neon-purple)]/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-(--neon-purple)/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-3xl mx-auto relative">
@@ -91,7 +91,7 @@ export function Contact() {
         <div className="grid sm:grid-cols-2 gap-6 mb-10">
           <ScrollAnimation direction="up" delay={0.1}>
             <div className="group p-6 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover h-full">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/20 to-[var(--neon-cyan)]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-xl bg-linear-to-br from-accent/20 to-(--neon-cyan)/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Mail className="w-6 h-6 text-accent" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Email</h4>
@@ -106,7 +106,7 @@ export function Contact() {
 
           <ScrollAnimation direction="up" delay={0.2}>
             <div className="group p-6 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover h-full">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--neon-purple)]/20 to-[var(--neon-pink)]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-xl bg-linear-to-br from-(--neon-purple)/20 to-(--neon-pink)/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="w-6 h-6 text-accent" />
               </div>
               <h4 className="font-semibold text-foreground mb-2 text-lg">Based In</h4>
@@ -168,14 +168,14 @@ export function Contact() {
 
               {status === 'error' && (
                 <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                   <p className="text-sm text-red-500">{errorMessage}</p>
                 </div>
               )}
 
               {status === 'success' && (
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-3">
-                  <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                   <p className="text-sm text-emerald-500">
                     Your email client should open with the message pre-filled. If not, email me directly at{' '}
                     <a href="mailto:mrwajahatalimir@gmail.com" className="underline">
@@ -188,7 +188,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-[var(--neon-cyan)] text-accent-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full px-8 py-4 rounded-xl bg-linear-to-r from-accent to-(--neon-cyan) text-accent-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 {status === 'loading' ? (
                   <>

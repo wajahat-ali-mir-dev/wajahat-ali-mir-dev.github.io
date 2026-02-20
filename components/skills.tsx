@@ -54,7 +54,7 @@ export function Skills() {
     <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2" />
-        <div className="absolute top-1/4 right-0 w-80 h-80 bg-[var(--neon-purple)]/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-(--neon-purple)/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 dot-pattern opacity-30" />
       </div>
 
@@ -82,11 +82,11 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <ScrollAnimation key={category.name} direction="up" delay={index * 0.1}>
               <div className="group relative p-6 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover h-full">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500"
                      style={{ background: `linear-gradient(135deg, var(--accent), var(--neon-purple))` }} />
                 
                 <div className="flex items-center gap-4 mb-5 relative">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} p-0.5`}>
+                  <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${category.gradient} p-0.5`}>
                     <div className="w-full h-full rounded-xl bg-card flex items-center justify-center">
                       <category.icon className="w-5 h-5 text-accent" />
                     </div>
@@ -100,7 +100,7 @@ export function Skills() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-4 py-1.5 rounded-full text-sm font-medium bg-secondary/50 text-accent border border-accent/20 hover:bg-accent/20 hover:border-accent/40 transition-all duration-300"
+                      className="tag-glow px-4 py-1.5 rounded-full text-sm font-medium bg-secondary/50 text-accent border border-accent/20 hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 cursor-default"
                     >
                       {skill}
                     </span>
@@ -114,10 +114,10 @@ export function Skills() {
         <ScrollAnimation direction="up" delay={0.4}>
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {additionalSkills.map((skill, index) => (
-              <div key={index} className="group relative p-8 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover text-center">
+              <div key={index} className="shimmer-border group relative p-8 rounded-2xl glass border border-border/50 hover:border-accent/40 transition-all duration-500 card-hover text-center">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative">
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-accent/20 to-[var(--neon-cyan)]/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-linear-to-br from-accent/20 to-(--neon-cyan)/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                     <skill.icon className="w-7 h-7 text-accent" />
                   </div>
                   <h4 className="font-semibold text-foreground text-lg mb-3 group-hover:text-accent transition-colors">{skill.title}</h4>
