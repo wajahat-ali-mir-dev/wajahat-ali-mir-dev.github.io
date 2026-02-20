@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const geist = Geist({
@@ -45,6 +46,9 @@ export const metadata: Metadata = {
   verification: {
     google: "oLqH14kJZyXdF0EL-juQ2o8s2KVcBp6lSYLq-R5CpBg",
     yandex: "a53070f63f56e499",
+    other: {
+      'msvalidate.01': '5B6BBD08AAE0F0AF07217A96F3803D58',
+    },
   },
   robots: {
     index: true,
@@ -163,6 +167,19 @@ export default function RootLayout({
       </head>
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G24MWXB71R"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-G24MWXB71R');
+          `}
+        </Script>
       </body>
     </html>
   )
